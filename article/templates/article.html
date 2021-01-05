@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="px-3">
+    <h1>Enter URL</h1>
+
+<div class="form">
+    <form action="/articledownload/" method="POST" type="text" accept-charset="utf-8">{% csrf_token %}
+    <div class="input-group">
+    <input name="getarticle" class="form-control" type="text"/>
+    <input type="submit" value="Submit">
+    </div>
+    </form>
+    </div>
+<!-- 
+article title -->
+
+<h1> {{ title }} </h1>
+
+<br>
+<!-- 
+article image -->
+
+<img src=" {{ image }} ">
+
+<br>
+<!-- 
+article text -->
+
+<p class="lead"> {{ text }} </p>
+
+<br>
+<br>
+<br>
+
+<p class="lead"> {{ summary }} </p>
+
+
+</main>
+
+
+
+{% endblock %}
